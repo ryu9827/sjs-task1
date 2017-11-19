@@ -7,8 +7,7 @@ import {WorkerService} from "./worker.service";
 @Component({
     selector: 'boat-detail',
     template: `
-      <div *ngIf="boat">
-       <br><br>
+      <div *ngIf="boat"><br><br>       
         <h2 class="text-center">{{boat.name}} details!</h2>
         <div><label>Boat id: {{boat.id}}</label></div>
         <div class="form-group row">
@@ -16,18 +15,17 @@ import {WorkerService} from "./worker.service";
           <div class="col-4">
             <input [(ngModel)]="boat.name" class="form-control" type="text" value="{{boat.name}}" id="name" placeholder="name">
           </div>
-        </div>
-       
-       <div class="form-group row">
-        <label for="worker" class="col-2">worker Name: </label>
-        <div class="col-4">
-         <select  class="custom-select col-2" id="worker">
-          <div *ngFor="let worker of workers">
-           <option  value="{{worker.id}}">{{worker.name}}</option>
+        </div>       
+        <div class="form-group row">
+          <label for="worker" class="col-2">worker Name: </label>
+          <div class="col-4">
+            <select  class="custom-select col-2" id="worker">
+              <div *ngFor="let worker of workers">
+              <option  value="{{worker.id}}">{{worker.name}}</option>
+            </div>
+            </select>
           </div>
-         </select>
         </div>
-       </div>
         <div class="form-group row">
           <label for="type" class="col-2 col-offset-2 col-form-label">type: </label>
           <div class="col-4">
@@ -72,8 +70,7 @@ import {WorkerService} from "./worker.service";
         </div>
         
           <button type="button" class="btn btn-primary col-1">Save</button>
-          <button type="button" class="btn btn-danger col-1 text-right">Delete</button>
-        
+          <button type="button" class="btn btn-danger col-1 text-right">Delete</button>        
       </div>
     `,
     providers:[WorkerService]
@@ -84,7 +81,7 @@ export class BoatDetailComponent implements OnInit{
 
     constructor(private WorkerService: WorkerService){}
 
-    getWorker(): void{
+    getWorker(): void {
         this.WorkerService.getWorker().then(workers => this.workers = workers );
     }
     ngOnInit(): void {

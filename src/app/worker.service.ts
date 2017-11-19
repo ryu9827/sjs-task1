@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Worker } from './worker';
 import { WORKER } from './mock-workers';
 

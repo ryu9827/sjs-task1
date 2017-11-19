@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Boat } from './boat';
 import { BOATS } from './mock-boats';
 

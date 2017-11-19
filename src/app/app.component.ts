@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Boat} from "./boat";
+import { Boat } from "./boat";
 import { BoatService } from "./boat.service";
 
 @Component({
@@ -17,17 +17,15 @@ import { BoatService } from "./boat.service";
               </div>      
             </div>            
             <div class="col-4">
-            <div class="card" style="cursor: pointer">
-              <img class="card-img-top" src="http://via.placeholder.com/350x150?text=New+Boat" alt="Card image cap" >
-              <div class="card-block">
-                <p class="card-title text-center">Create a New Boat</p>
+              <div class="card" style="cursor: pointer">
+                <img class="card-img-top" src="http://via.placeholder.com/350x150?text=New+Boat" alt="Card image cap" >
+                <div class="card-block">
+                  <p class="card-title text-center">Create a New Boat</p>
+                </div>
               </div>
             </div>
-            </div>
-          </div>
-        
-        <boat-detail [boat]="selectedBoat"></boat-detail>
-        
+          </div>        
+        <boat-detail [boat]="selectedBoat"></boat-detail>        
       </div>
     `,
     providers:[BoatService]
