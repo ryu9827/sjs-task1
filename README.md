@@ -1,27 +1,22 @@
-# SjsTask1
+#Candidate: Bruce Li
+[online CV](http://www.brucelihunting4ajob.info/).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.2.
+## Task1-Frontend
 
-## Development server
+This project was generated with Angular V5.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Start server
 
-## Code scaffolding
+Run `ng serve` for a dev server. Navigate to [http://localhost:4200/](http://localhost:4200). 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Progress made
+√ 1.Install json-server
+√ 2.Use the supplied json file in the project
+√ 3.Fire up Postman in Chrome
+√ 4.A page that lists all boats (names and photos)
+√ 5.Clicking a boat in above list will show a page having all available details about a specific boat, including the names of the workers who are working on that boat
+√ 6.UI to do CRUD operations on the boat data set
+× 7.UI to assign / un-assign workers to boats - there is no need to build a CRUD UI for the workers data set.
+<p align="center">
+  <img alt="screenshot" src="http://www.brucelihunting4ajob.info/img/tmp/task1.png">
+</p>
