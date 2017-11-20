@@ -4,6 +4,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BoatDetailComponent } from "./boat-detail.component";
+import { HttpModule } from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { BoatDetailComponent } from "./boat-detail.component";
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

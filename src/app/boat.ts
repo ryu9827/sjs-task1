@@ -8,5 +8,4 @@ export class Boat {
     arrival_date: string;
     delivery_date: string;
     status: string;
-    // workers: number;
 }

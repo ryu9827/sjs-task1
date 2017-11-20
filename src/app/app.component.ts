@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Boat } from "./boat";
 import { BoatService } from "./boat.service";
+import { Response} from '@angular/http';
 
 @Component({
     selector: 'app-root',
@@ -10,7 +11,7 @@ import { BoatService } from "./boat.service";
           <div class="card-deck">
             <div *ngFor="let boat of boats" class="col-4">
               <div class="card" [class.selected]="boat === selectedBoat" (click)="onSelect(boat)" style="cursor: pointer">
-                <img class="card-img-top" src="{{boat.photo}}" alt="Card image cap" >
+                <img class="card-img-top" src="http://via.placeholder.com/350x150/51A143" alt="Card image cap" >
                 <div class="card-block">
                   <p class="card-title text-center">{{boat.name}}</p>          
                 </div>
@@ -38,7 +39,8 @@ export class AppComponent implements OnInit{
     constructor(private BoatService: BoatService){}
 
     getBoats(): void{
-        this.BoatService.getBoats().then(boats => this.boats = boats );
+        this.BoatService.getBoats()
+            .then(boats => this.boats = boats);
     }
 
     ngOnInit(): void {

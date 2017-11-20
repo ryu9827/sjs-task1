@@ -1,10 +1,48 @@
 import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 import { Boat } from './boat';
-import { BOATS } from './mock-boats';
 
 @Injectable()
 export class BoatService {
+
+    private headers = new Headers({'Content-Type': 'application/json'});
+    private boatUrl = "http://localhost:3000/boats";
+
+    constructor(private http: Http) { }
+
     getBoats(): Promise<Boat[]> {
-        return Promise.resolve(BOATS);
+        return this.http.get(this.boatUrl)
+            .toPromise()
+            .then(response => response.json() as Boat[])
+            .catch(BoatService.handleError);
+    }
+
+    update(boat: Boat): Promise<Boat> {
+        const url = `${this.boatUrl}/${boat.id}`;
+        return this.http
+            .put(url, JSON.stringify(boat), {headers: this.headers})
+            .toPromise()
+            .then(() => alert(boat.name+" is saved."))
+            .catch(BoatService.handleError);
+    }
+
+    delete(id: number): Promise<void> {
+        const url = `${this.boatUrl}/${id}`;
+        if(confirm("Do you really want to delete this boat?")){
+            return this.http.delete(url, {headers: this.headers})
+                .toPromise()
+                .then(() => null)
+                .catch(BoatService.handleError);
+        }
+        else {
+            alert("It is cancelled. The boat is safe.");
+        }
+
+    }
+
+    private static handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
     }
 }
