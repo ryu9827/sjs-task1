@@ -41,8 +41,16 @@ export class BoatService {
 
     }
 
+    create(name: string): Promise<void> {
+        return this.http
+            .post(this.boatUrl, JSON.stringify({name: name}), {headers: this.headers})
+            .toPromise()
+            .then(res => res.json() as Boat)
+            .catch(BoatService.handleError);
+    }
+
     private static handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('Cannot read data from server', error);
         return Promise.reject(error.message || error);
     }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Boat } from "./boat";
 import { BoatService } from "./boat.service";
-import { Response} from '@angular/http';
 
 @Component({
     selector: 'app-root',
@@ -13,15 +12,16 @@ import { Response} from '@angular/http';
               <div class="card" [class.selected]="boat === selectedBoat" (click)="onSelect(boat)" style="cursor: pointer">
                 <img class="card-img-top" src="http://via.placeholder.com/350x150/51A143" alt="Card image cap" >
                 <div class="card-block">
-                  <p class="card-title text-center">{{boat.name}}</p>          
+                 <p class="card-title text-center"><b>{{boat.name}}</b></p>          
                 </div>
               </div>      
-            </div>            
+            </div>
+           
             <div class="col-4">
               <div class="card" style="cursor: pointer">
-                <img class="card-img-top" src="http://via.placeholder.com/350x150?text=New+Boat" alt="Card image cap" >
-                <div class="card-block">
-                  <p class="card-title text-center">Create a New Boat</p>
+                <img class="card-img-top" (click)="add(boatName.value); boatName.value=''"  src="http://via.placeholder.com/350x150/02EAFF?text=Add+New+Boat" alt="Card image cap" >
+                <div class="card-block">                  
+                  <input #boatName class="form-control text-center" type="text" id="newBoat" placeholder="New Boat Name">                                  	               
                 </div>
               </div>
             </div>
@@ -41,6 +41,19 @@ export class AppComponent implements OnInit{
     getBoats(): void{
         this.BoatService.getBoats()
             .then(boats => this.boats = boats);
+    }
+
+    add(name: string): void {
+        name = name.trim();
+        if (!name) {
+            alert("Please enter boat name first.");
+            return;
+        }
+        this.BoatService.create(name)
+            .then(boat => {
+                this.selectedBoat = null;
+            });
+        location.reload(true);
     }
 
     ngOnInit(): void {

@@ -107,7 +107,7 @@ export class BoatDetailComponent implements OnInit{
 
     save(): void {
         this.BoatService.update(this.boat)
-            .then(()=>this.BoatService.getBoats())
+            .then(()=>this.BoatService.getBoats());
         location.reload(true);
     }
 
