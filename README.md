@@ -1,5 +1,5 @@
 # Candidate: Bruce Li
-<p>[online CV](http://www.brucelihunting4ajob.info/).</p>
+[online CV](http://www.brucelihunting4ajob.info/).
 
 ## Task1-Frontend
 
