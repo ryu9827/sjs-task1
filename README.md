@@ -22,5 +22,5 @@ Run `ng serve` for a dev server. Navigate to [http://localhost:4200/](http://loc
   <img alt="screenshot" src="http://www.brucelihunting4ajob.info/img/tmp/task1_jsonServer">
 </p>
 <p align="center">
-  <img alt="screenshot" src="http://www.brucelihunting4ajob.info/img/tmp/task1.png">
+  <img alt="screenshot" src="http://www.brucelihunting4ajob.info/img/tmp/task1-1.png">
 </p>
